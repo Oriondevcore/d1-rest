@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "d1-rest",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "karaoke-songs",
+          "database_id": "11f50387-dbbd-47d0-98fd-d0ce61af910f"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "ca1698a45f26408ab85b151d86b66501",
+            "binding": "SECRET",
+            "secret_name": "cloudfare"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
